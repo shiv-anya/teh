@@ -178,11 +178,11 @@ export const TrendingDestinations = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="md:h-screen h-auto max-h-[700px] my-16">
+    <section className="md:h-screen h-auto max-h-[700px] my-[clamp(1.6rem,5vw,4rem)]">
       <Container className="h-full">
         <div className="h-full flex flex-col gap-8">
           <div className="flex gap-5 flex-col w-full">
-            <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize font-semibold tracking-wide">
+            <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize">
               Top 10 <span className="text-blue-400">destinations</span>
             </h2>
             <p className="text-xl">Enjoy famous destinations trips with us</p>

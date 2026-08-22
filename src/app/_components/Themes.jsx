@@ -82,7 +82,7 @@ export const Themes = () => {
       <Container>
         {/* Heading */}
         <div className="flex gap-2 sm:gap-3 flex-col mb-8 sm:mb-10">
-          <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize font-semibold tracking-wide">
+          <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize">
             Explore by <span className="text-blue-400">themes</span>
           </h2>
 

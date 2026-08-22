@@ -24,7 +24,7 @@ const features = [
 export const Enquiry = () => {
   return (
     <Container>
-      <section className="my-16 h-screen w-full h-max-[800px] relative flex justify-end rounded-2xl overflow-hidden">
+      <section className="my-[clamp(1.6rem,5vw,4rem)] h-auto md:h-screen w-full md:max-h-[900px] lg:max-h-[750px] relative flex flex-col lg:flex-row justify-end rounded-2xl overflow-hidden">
         <Image
           src={"/images/form_bg.jpg"}
           alt="travel form background"
@@ -32,10 +32,10 @@ export const Enquiry = () => {
           className="absolute inset-0 object-cover"
         />
         <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
-        <div className="w-[55%] p-10 py-20 h-full text-white relative flex justify-center items-center">
+        <div className="w-full lg:w-[55%] p-10 py-5 lg:py-20 h-full text-white relative flex justify-center items-center">
           <div className="flex flex-col h-full justify-between">
             <div className="flex flex-col gap-5">
-              <h2 className="text-5xl font-bold">
+              <h2 className="text-[clamp(1.8rem,5vw,2.5rem)]">
                 Let&apos;s Plan Your Perfect Escape.
               </h2>
               <p>
@@ -43,7 +43,7 @@ export const Enquiry = () => {
                 create a package that fits your plans, preferences, and budget.
               </p>
             </div>
-            <div className="flex bg-black/20 rounded-2xl font-bold overflow-hidden backdrop-blur-sm py-5">
+            <div className="hidden md:flex bg-black/20 w-fit rounded-2xl overflow-hidden backdrop-blur-sm py-5">
               {features.map((f, i) => (
                 <div
                   className={`flex flex-col gap-2 items-center px-5 ${
@@ -51,7 +51,7 @@ export const Enquiry = () => {
                   }`}
                   key={i}
                 >
-                  <div className="">
+                  <div>
                     <f.icon />
                   </div>
                   <p className="text-center text-xs">{f.title}</p>
@@ -60,8 +60,8 @@ export const Enquiry = () => {
             </div>
           </div>
         </div>
-        <div className="w-[45%] h-full relative flex justify-center items-center p-8 text-white">
-          <div className="bg-black/50 backdrop-blur-sm h-full w-full rounded-2xl p-8">
+        <div className="w-full lg:w-[45%] h-full relative flex justify-center items-center px-8 pb-8 lg:p-8 text-white">
+          <div className="bg-black/50 shadow-glass backdrop-blur-sm h-fit w-full rounded-2xl p-8">
             <h2 className="text-2xl border-b border-gray-500 text-center pb-4">
               Allow us to call you back
             </h2>

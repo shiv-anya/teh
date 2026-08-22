@@ -337,7 +337,7 @@ export default function VideoTestimonials() {
   }, [isOpen, spreadIndex]);
 
   return (
-    <section className="relative h-fit md:h-auto overflow-hidden bg-[#eee9df] mt-12 px-5 py-24 sm:px-8">
+    <section className="relative h-fit md:h-auto overflow-hidden bg-[#eee9df] mt-[clamp(1.6rem,5vw,4rem)] px-5 py-24 sm:px-8">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(#9b9487_0.7px,transparent_0.7px)] [background-size:18px_18px]" />
 

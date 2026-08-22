@@ -199,7 +199,7 @@ export const TextTestimonials = () => {
               ` ${
                 reviewLayouts[i].type === "btn"
                   ? "relative"
-                  : " bg-white/30 font-bold backdrop-blur-xs text-black relative h-fit shadow-people rounded-2xl p-6"
+                  : " bg-white font-bold backdrop-blur-xs text-black relative h-fit shadow-people rounded-2xl p-6"
               }`
             }
           >

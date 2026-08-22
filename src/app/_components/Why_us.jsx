@@ -24,7 +24,7 @@ export const statistics = [
 
 export const WhyUs = () => {
   return (
-    <section className="h-auto my-16">
+    <section className="h-auto my-[clamp(1.6rem,5vw,4rem)]">
       <Container>
         <div className="flex flex-col gap-2">
           <p className="uppercase font-bold text-blue-500 bg-blue-500/10 w-fit p-1 px-3 rounded-full text-sm">
@@ -32,9 +32,9 @@ export const WhyUs = () => {
           </p>
           <div className="flex flex-col md:flex-row justify-between items-start">
             <div className="flex-1 font-jakarta text-5xl font-bold leading-16">
-              <h1 className="w-full">
+              <h2 className="w-full text-[clamp(1.8rem,5vw,2.5rem)]">
                 Handpicked Journeys, <br /> Perfectly Crafted
-              </h1>
+              </h2>
             </div>
             <div className="flex-1 text-right">
               Whether you&apos;re seeking adventure, relaxation, or cultural

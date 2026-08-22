@@ -13,7 +13,7 @@ export const Navbar = () => {
         <div className="w-full flex justify-between items-center">
           {/* Logo */}
           <div className="shrink-0">
-            <h1 className="text-base sm:text-lg md:text-xl font-bold whitespace-nowrap">
+            <h1 className="text-[clamp(1.8rem,5vw,2.5rem)] sm:text-lg md:text-xl font-bold whitespace-nowrap">
               Travel Empire Holidays
             </h1>
           </div>

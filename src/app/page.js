@@ -157,7 +157,7 @@ export const internationalDestinations = [
 export default function Home() {
   return (
     <section>
-      <div className="relative h-[100svh] min-h-[600px] max-h-[1000px] mb-235 lg:mb-78 7xl:mb-58">
+      <div className="relative h-[100svh] min-h-[600px] max-h-[1000px] mb-235 lg:mb-78 7xl:mb-50">
         <video
           autoPlay
           muted
@@ -176,7 +176,7 @@ export default function Home() {
 
         <Container className="absolute inset-0">
           <div className="h-full w-full flex flex-col gap-4 text-white justify-center items-center text-center px-4 sm:px-6 md:px-8 -translate-y-4 sm:-translate-y-6">
-            <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] sm:text-4xl md:text-5xl lg:text-6xl font-thin font-jakarta leading-[1.1] max-w-5xl">
+            <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-thin font-jakarta leading-[1.1] max-w-5xl">
               WHERE WILL YOU GO NEXT?
             </h2>
 
@@ -194,17 +194,17 @@ export default function Home() {
       <WhyUs />
       <div className="w-full">
         <Container>
-          <h1 className="font-jakarta text-5xl capitalize">
+          <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
             international <span className="text-blue-400">Destinations</span>
-          </h1>
+          </h2>
           <Destinations cards={internationalDestinations} />
         </Container>
       </div>
-      <div className="w-full my-8">
+      <div className="w-full my-[clamp(1.6rem,5vw,4rem)]">
         <Container>
-          <h1 className="font-jakarta text-5xl capitalize">
+          <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
             domestic <span className="text-blue-400">Destinations</span>
-          </h1>
+          </h2>
           <Destinations cards={domesticDestinations} />
         </Container>
       </div>
