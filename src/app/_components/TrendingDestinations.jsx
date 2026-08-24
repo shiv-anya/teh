@@ -104,7 +104,7 @@ const DestinationContent = ({ destination }) => {
 const DestinationCarousel = ({ items, activeIndex, onSelect, next, prev }) => {
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="relative h-58 md:h-[500px] w-full">
+      <div className="relative h-[256px] md:h-[500px] w-full">
         {items.map((item, index) => {
           const offset = (index - activeIndex + items.length) % items.length;
 
@@ -129,7 +129,9 @@ const DestinationCarousel = ({ items, activeIndex, onSelect, next, prev }) => {
             >
               <div
                 className={`relative overflow-hidden rounded-3xl ${
-                  offset === 0 ? "h-52 w-[300px]" : "h-48 w-[240px]"
+                  offset === 0
+                    ? "h-[200px] w-[250px] lg:h-[420px] lg:w-[300px]"
+                    : "h-[200px] w-[250px] lg:h-[360px] lg:w-[240px]"
                 }`}
               >
                 <Image
