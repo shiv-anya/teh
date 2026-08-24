@@ -78,7 +78,7 @@ const TextReview = ({ review, index }) => {
           size={26}
         />
 
-        <div className="flex gap-1 text-blue-400">
+        <div className="flex gap-[clamp(0.25rem,2vw,0.5rem)] text-blue-400">
           {[...Array(5)].map((_, i) => (
             <Star key={i} size={16} fill="#2196f3" />
           ))}
@@ -93,7 +93,7 @@ const TextReview = ({ review, index }) => {
         <h3 className="font-medium">{review.name}</h3>
 
         {review.destination && (
-          <span className="flex items-center gap-1 text-xs text-slate-500">
+          <span className="flex items-center gap-[clamp(0.25rem,2vw,0.5rem)] text-xs text-slate-500">
             <MapPin size={14} />
             {review.destination}
           </span>
@@ -114,7 +114,9 @@ const TextReview = ({ review, index }) => {
 const ImageTextReview = ({ review, index }) => {
   return (
     <div
-      className={`h-full flex gap-5 ${index === 3 ? "flex-row-reverse" : ""}`}
+      className={`h-full flex gap-[clamp(0.25rem,2vw,1.25rem)] ${
+        index === 3 ? "flex-row-reverse" : ""
+      }`}
     >
       <div className="relative w-[40%] rounded-2xl overflow-hidden">
         <Image
@@ -133,7 +135,7 @@ const ImageTextReview = ({ review, index }) => {
             className="text-blue-400 rotate-180"
           />
 
-          <div className="flex gap-1 text-blue-400">
+          <div className="flex gap-[clamp(0.25rem,2vw,0.25rem)] text-blue-400">
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={16} fill="#2196f3" />
             ))}
@@ -148,7 +150,7 @@ const ImageTextReview = ({ review, index }) => {
           <h3 className="font-medium">{review.name}</h3>
 
           {review.destination && (
-            <span className="flex items-center gap-1 text-xs text-slate-500">
+            <span className="flex items-center gap-[clamp(0.25rem,2vw,0.25rem)] text-xs text-slate-500">
               <MapPin size={14} />
               {review.destination}
             </span>
@@ -165,7 +167,7 @@ const ReviewCard = ({ review, layout, index }) => {
       {layout.type === "image-text" ? (
         <ImageTextReview review={review} index={index} />
       ) : layout.type === "btn" ? (
-        <button className="w-full mx-auto mt-5 flex items-center justify-center gap-2 bg-black text-white px-8 py-3 rounded-lg  cursor-pointer">
+        <button className="w-full mx-auto mt-5 flex items-center justify-center gap-[clamp(0.25rem,2vw,0.5rem)] bg-black text-white px-8 py-3 rounded-lg  cursor-pointer">
           See more reviews{" "}
           <span className="text-black bg-white p-1 rounded-full">
             <ArrowRight />
@@ -184,7 +186,7 @@ export const TextTestimonials = () => {
   return (
     <>
       <div
-        className="relative grid grid-cols-1 md:grid-cols-3 gap-5 mt-14 rounded-2xl p-6 overflow-hidden"
+        className="relative grid grid-cols-1 lg:grid-cols-3 gap-[clamp(0.25rem,2vw,1.25rem)] mt-14 rounded-2xl p-6 overflow-hidden"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2400&q=90')",

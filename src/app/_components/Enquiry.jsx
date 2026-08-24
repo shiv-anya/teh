@@ -34,7 +34,7 @@ export const Enquiry = () => {
         <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
         <div className="w-full lg:w-[55%] p-10 py-5 lg:py-20 h-full text-white relative flex justify-center items-center">
           <div className="flex flex-col h-full justify-between">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-[clamp(0.25rem,2vw,1rem)]">
               <h2 className="text-[clamp(1.8rem,5vw,2.5rem)]">
                 Let&apos;s Plan Your Perfect Escape.
               </h2>
@@ -46,7 +46,7 @@ export const Enquiry = () => {
             <div className="hidden md:flex bg-black/20 w-fit rounded-2xl overflow-hidden backdrop-blur-sm py-5">
               {features.map((f, i) => (
                 <div
-                  className={`flex flex-col gap-2 items-center px-5 ${
+                  className={`flex flex-col gap-[clamp(0.25rem,2vw,1rem)] items-center px-5 ${
                     i === features.length - 1 ? "" : "border-r border-gray-500"
                   }`}
                   key={i}
@@ -62,7 +62,7 @@ export const Enquiry = () => {
         </div>
         <div className="w-full lg:w-[45%] h-full relative flex justify-center items-center px-8 pb-8 lg:p-8 text-white">
           <div className="bg-black/50 shadow-glass backdrop-blur-sm h-fit w-full rounded-2xl p-8">
-            <h2 className="text-2xl border-b border-gray-500 text-center pb-4">
+            <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] border-b border-gray-500 text-center pb-4">
               Allow us to call you back
             </h2>
             <form className="w-full max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export const Enquiry = () => {
               </div>
 
               {/* Travel Date + Travellers */}
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-[clamp(0.25rem,2vw,1rem)] md:grid-cols-2">
                 <div>
                   <label
                     htmlFor="travelDate"

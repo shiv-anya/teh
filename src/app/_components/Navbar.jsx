@@ -8,32 +8,32 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative z-50 py-4 sm:py-5 md:py-6 w-full bg-gradient-to-b from-black/70 via-black/30 to-transparent text-white">
+    <nav className="relative z-50 py-4 sm:py-5 md:py-6 w-full bg-linear-to-b from-black/70 via-black/30 to-transparent text-white">
       <Container>
         <div className="w-full flex justify-between items-center">
           {/* Logo */}
           <div className="shrink-0">
-            <h1 className="text-[clamp(1.8rem,5vw,2.5rem)] sm:text-lg md:text-xl font-bold whitespace-nowrap">
+            <h1 className="text-[clamp(1.6rem,2vw,1.4rem)] font-bold whitespace-nowrap">
               Travel Empire Holidays
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-6 items-center font-bold bg-black/30 backdrop-blur-sm py-3 px-6 rounded-full">
+          <ul className="hidden lg:flex gap-[clamp(0.25rem,2vw,2rem)] items-center font-bold bg-black/30 backdrop-blur-sm py-[clamp(0.75rem,3vw,0.80rem)] px-[clamp(1.5rem,3vw,2rem)] rounded-full">
             <li className="text-sm cursor-pointer">Explore Destinations</li>
 
             <li className="text-sm cursor-pointer">Tour Packages</li>
           </ul>
 
           {/* Desktop CTA */}
-          <a className="hidden md:block cursor-pointer p-3 px-6 rounded-full bg-black/30 backdrop-blur-sm font-bold text-sm transition duration-300 whitespace-nowrap">
+          <a className="hidden lg:block cursor-pointer py-[clamp(0.75rem,3vw,0.80rem)] px-[clamp(1.5rem,3vw,2rem)] rounded-full bg-black/30 backdrop-blur-sm font-bold text-sm transition duration-300 whitespace-nowrap">
             Connect To Us
           </a>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2.5 rounded-full bg-black/30 backdrop-blur-sm cursor-pointer"
+            className="lg:hidden p-2.5 rounded-full bg-black/30 backdrop-blur-sm cursor-pointer"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
@@ -42,8 +42,8 @@ export const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="absolute w-[90%] left-1/2 -translate-x-1/2 md:hidden mt-4 p-4 rounded-2xl bg-black/40 backdrop-blur-md">
-            <ul className="flex flex-col gap-2">
+          <div className="absolute w-[98%] left-1/2 -translate-x-1/2 lg:hidden mt-4 p-[clamp(0.75rem,3vw,2rem)] rounded-2xl bg-black/40 backdrop-blur-md">
+            <ul className="flex flex-col gap-[clamp(0.25rem,2vw,1rem)]">
               <li>
                 <button
                   onClick={() => setIsOpen(false)}

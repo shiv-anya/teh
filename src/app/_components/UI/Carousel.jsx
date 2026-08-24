@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export default function Carousel({ children, visibleSlides = 4, gap = 32 }) {
+export default function Carousel({ children, visibleSlides = 4, gap }) {
   const trackRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -65,7 +65,7 @@ export default function Carousel({ children, visibleSlides = 4, gap = 32 }) {
 
   return (
     <div className="flex flex-col items-end">
-      <div className="flex gap-2 align-self-end mb-6">
+      <div className="flex gap-[clamp(0.25rem,2vw,0.5rem)] align-self-end mb-6">
         <button
           onClick={prev}
           className="p-1 bg-black/30 backdrop-blur-sm text-white hover:text-blue-200 rounded-full cursor-pointer transition duration-300"
@@ -102,9 +102,8 @@ export default function Carousel({ children, visibleSlides = 4, gap = 32 }) {
           }}
           style={{
             display: "flex",
-            gap,
           }}
-          className="h-full"
+          className="h-full gap-[clamp(0.5rem,2vw,2rem)]"
         >
           {children}
         </motion.div>

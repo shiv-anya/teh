@@ -83,13 +83,13 @@ const DestinationContent = ({ destination }) => {
           }}
           className="space-y-6"
         >
-          <motion.h1
-            className="text-6xl font-bold text-white uppercase"
+          <motion.h2
+            className="text-[clamp(1.8rem,5vw,2.5rem)] font-bold text-white uppercase"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
             {destination.name}
-          </motion.h1>
+          </motion.h2>
 
           <p className="text-white/80 leading-relaxed">{destination.info}</p>
         </motion.div>
@@ -104,7 +104,7 @@ const DestinationContent = ({ destination }) => {
 const DestinationCarousel = ({ items, activeIndex, onSelect, next, prev }) => {
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="relative h-[450px] md:h-[500px] w-full">
+      <div className="relative h-58 md:h-[500px] w-full">
         {items.map((item, index) => {
           const offset = (index - activeIndex + items.length) % items.length;
 
@@ -129,7 +129,7 @@ const DestinationCarousel = ({ items, activeIndex, onSelect, next, prev }) => {
             >
               <div
                 className={`relative overflow-hidden rounded-3xl ${
-                  offset === 0 ? "h-[420px] w-[300px]" : "h-[360px] w-[240px]"
+                  offset === 0 ? "h-52 w-[300px]" : "h-48 w-[240px]"
                 }`}
               >
                 <Image
@@ -180,8 +180,8 @@ export const TrendingDestinations = () => {
   return (
     <section className="md:h-screen h-auto max-h-[700px] my-[clamp(1.6rem,5vw,4rem)]">
       <Container className="h-full">
-        <div className="h-full flex flex-col gap-8">
-          <div className="flex gap-5 flex-col w-full">
+        <div className="h-full flex flex-col gap-[clamp(0.25rem,2vw,2rem)]">
+          <div className="flex gap-[clamp(0.25rem,2vw,1.25rem)] flex-col w-full">
             <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize">
               Top 10 <span className="text-blue-400">destinations</span>
             </h2>

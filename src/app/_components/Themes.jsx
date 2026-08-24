@@ -81,7 +81,7 @@ export const Themes = () => {
     <section className="mt-[45rem] sm:mt-[35rem] lg:mt-0">
       <Container>
         {/* Heading */}
-        <div className="flex gap-2 sm:gap-3 flex-col mb-8 sm:mb-10">
+        <div className="flex gap-[clamp(0.5rem,2vw,0.75rem)] flex-col mb-8 sm:mb-10">
           <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize">
             Explore by <span className="text-blue-400">themes</span>
           </h2>
@@ -97,7 +97,7 @@ export const Themes = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:gap-4 gap-3 sm:gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 lg:flex gap-[clamp(0.25rem,2vw,1rem)]"
         >
           {cards.map((card) => {
             const isHovered = hoveredId === card.id;
@@ -143,7 +143,7 @@ export const Themes = () => {
                   className="absolute object-cover"
                 />
 
-                <div className="relative flex gap-2 w-full h-full items-end justify-center">
+                <div className="relative flex w-full h-full items-end justify-center">
                   <p className="p-1 px-2 sm:px-3 text-[10px] sm:text-xs text-white bg-black/50 backdrop-blur-sm w-fit rounded-full text-center">
                     {card.title}
                   </p>

@@ -78,7 +78,7 @@ export const People = () => {
             </div>
 
             {/* People Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between gap-4 sm:gap-6 lg:gap-8 h-auto lg:h-60 px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between gap-[clamp(0.75rem,2vw,2rem)] h-auto lg:h-60 px-4 sm:px-6 lg:px-8">
               {images.map((img) => {
                 return (
                   <div
@@ -102,11 +102,11 @@ export const People = () => {
           </div>
 
           {/* Features */}
-          <div className="p-4 sm:p-6 rounded-b-3xl sm:rounded-b-4xl grid grid-cols-1 sm:grid-cols-2 lg:flex gap-3 sm:gap-4 lg:gap-8 justify-around items-center">
+          <div className="p-4 sm:p-6 rounded-b-3xl sm:rounded-b-4xl grid grid-cols-1 sm:grid-cols-2 lg:flex gap-[clamp(0.75rem,2vw,2rem)] justify-around items-center">
             {features.map((f, i) => (
               <div
                 key={i}
-                className="p-4 sm:p-5 flex-1 shadow-people rounded-2xl flex gap-3 sm:gap-5 px-4 sm:px-6 justify-center items-center text-sm sm:text-base"
+                className="p-4 sm:p-5 flex-1 shadow-people rounded-2xl flex gap-[clamp(0.75rem,2vw,1rem)] px-4 sm:px-6 justify-center items-center text-sm sm:text-base"
               >
                 <p className="shrink-0">{f.icon}</p>
                 <p>{f.title}</p>

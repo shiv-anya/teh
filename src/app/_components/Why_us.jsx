@@ -26,7 +26,7 @@ export const WhyUs = () => {
   return (
     <section className="h-auto my-[clamp(1.6rem,5vw,4rem)]">
       <Container>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-[clamp(0.25rem,2vw,0.5rem)]">
           <p className="uppercase font-bold text-blue-500 bg-blue-500/10 w-fit p-1 px-3 rounded-full text-sm">
             Why choose us
           </p>
@@ -36,7 +36,7 @@ export const WhyUs = () => {
                 Handpicked Journeys, <br /> Perfectly Crafted
               </h2>
             </div>
-            <div className="flex-1 text-right">
+            <div className="flex-1 md:text-right">
               Whether you&apos;re seeking adventure, relaxation, or cultural
               immersion, our curated itineraries ensure every moment of your
               journey is unforgettable.
@@ -58,9 +58,9 @@ export const WhyUs = () => {
                   alt="selfie of a woman on an adventure"
                   className="absolute h-full w-full object-cover"
                 />
-                <div className="h-auto w-full bg-white relative rounded-2xl flex flex-col md:gap-0 gap-5 md:flex-row justify-between items-center p-5">
-                  <div className="w-[70%] flex flex-col gap-2">
-                    <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-semibold">
+                <div className="h-auto w-full bg-white relative rounded-2xl flex flex-col gap-[clamp(0.2rem,2vw,1rem)] md:flex-row justify-between md:items-center p-[clamp(0rem,2vw,1rem)]">
+                  <div className="md:w-[70%] flex flex-col gap-[clamp(0.25rem,2vw,0.5rem)]">
+                    <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-semibold hidden md:block">
                       Unforgettable Moments for All Ages
                     </h2>
                     <p className="text-gray-700">
@@ -70,7 +70,7 @@ export const WhyUs = () => {
                     </p>
                   </div>
 
-                  <button className="bg-black text-white rounded-full px-6 py-2 flex justify-center items-center cursor-pointer">
+                  <button className="bg-black text-white rounded-full w-fit px-6 py-2 flex justify-center items-center cursor-pointer">
                     See Itineraries{" "}
                     <ArrowRight
                       size={20}
@@ -87,11 +87,11 @@ export const WhyUs = () => {
               </div>
             </div>
           </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[clamp(0.5rem,2vw,1rem)] mt-8">
             {statistics.map((stat, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-5 shadow-people flex-1 flex flex-col items-center gap-2"
+                className="bg-white rounded-2xl p-5 shadow-people flex-1 flex flex-col items-center gap-[clamp(0.25rem,2vw,0.5rem)]"
               >
                 <h2 className="text-blue-400 font-bold text-[clamp(1.8rem,5vw,2.5rem)]">
                   <Counter value={stat.number} />
