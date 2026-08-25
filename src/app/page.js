@@ -9,6 +9,7 @@ import { WhyUs } from "./_components/Why_us";
 import { Destinations } from "./_components/Destinations";
 import { Reviews } from "./_components/Reviews";
 import { Enquiry } from "./_components/Enquiry";
+import { Footer } from "./_components/Footer";
 
 export const domesticDestinations = [
   {
@@ -215,6 +216,7 @@ export default function Home() {
         </div>
         <Reviews />
         <Enquiry />
+        <Footer />
       </div>
     </>
   );
