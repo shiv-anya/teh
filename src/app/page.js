@@ -156,60 +156,66 @@ export const internationalDestinations = [
 
 export default function Home() {
   return (
-    <section>
-      <div className="relative h-svh min-h-150 max-h-250 mb-235 lg:mb-78 7xl:mb-50">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/hero_video.mp4" type="video/mp4" />
-        </video>
+    <>
+      <div className="relative mb-[clamp(1.6rem,5vw,4rem)]">
+        <div className="relative h-svh min-h-150 max-h-250">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/hero_video.mp4" type="video/mp4" />
+          </video>
 
-        <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/30 to-black/10" />
 
-        <header className="relative z-20 w-full">
-          <Navbar />
-        </header>
+          <header className="relative z-20 w-full">
+            <Navbar />
+          </header>
 
-        <Container className="absolute inset-0">
-          <div className="h-full w-full flex flex-col gap-[clamp(0.25rem,2vw,0.5rem)] text-white justify-center items-center text-center px-[clamp(0.75rem,3vw,2rem)] -translate-y-4 sm:-translate-y-6">
-            <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-thin font-jakarta leading-[1.1] max-w-5xl">
-              WHERE WILL YOU GO NEXT?
+          <Container className="absolute inset-0">
+            <div className="h-full w-full flex flex-col gap-[clamp(0.25rem,2vw,0.5rem)] text-white justify-center items-center text-center px-[clamp(0.75rem,3vw,2rem)] -translate-y-4 sm:-translate-y-6">
+              <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-thin font-jakarta leading-[1.1] max-w-5xl">
+                WHERE WILL YOU GO NEXT?
+              </h2>
+
+              <p className="text-sm sm:text-base md:text-lg text-center leading-relaxed max-w-xl">
+                Discover amazing places, unforgettable experiences,
+                <br className="hidden sm:block" />
+                and journeys that stay with you forever.
+              </p>
+            </div>
+          </Container>
+        </div>
+        <div className="-mt-[600px]">
+          <People />
+        </div>
+      </div>
+      <div>
+        <Themes />
+        <TrendingDestinations />
+        <WhyUs />
+        <div className="w-full">
+          <Container>
+            <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
+              international <span className="text-blue-400">Destinations</span>
             </h2>
-
-            <p className="text-sm sm:text-base md:text-lg text-center leading-relaxed max-w-xl">
-              Discover amazing places, unforgettable experiences,
-              <br className="hidden sm:block" />
-              and journeys that stay with you forever.
-            </p>
-          </div>
-        </Container>
-        <People />
+            <Destinations cards={internationalDestinations} />
+          </Container>
+        </div>
+        <div className="w-full my-[clamp(1.6rem,5vw,4rem)]">
+          <Container>
+            <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
+              domestic <span className="text-blue-400">Destinations</span>
+            </h2>
+            <Destinations cards={domesticDestinations} />
+          </Container>
+        </div>
+        <Reviews />
+        <Enquiry />
       </div>
-      <Themes />
-      <TrendingDestinations />
-      <WhyUs />
-      <div className="w-full">
-        <Container>
-          <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
-            international <span className="text-blue-400">Destinations</span>
-          </h2>
-          <Destinations cards={internationalDestinations} />
-        </Container>
-      </div>
-      <div className="w-full my-[clamp(1.6rem,5vw,4rem)]">
-        <Container>
-          <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
-            domestic <span className="text-blue-400">Destinations</span>
-          </h2>
-          <Destinations cards={domesticDestinations} />
-        </Container>
-      </div>
-      <Reviews />
-      <Enquiry />
-    </section>
+    </>
   );
 }

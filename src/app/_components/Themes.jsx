@@ -78,7 +78,7 @@ export const Themes = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
   return (
-    <section className="mt-[45rem] sm:mt-[35rem] lg:mt-0">
+    <section>
       <Container>
         {/* Heading */}
         <div className="flex gap-[clamp(0.5rem,2vw,0.75rem)] flex-col mb-8 sm:mb-10">

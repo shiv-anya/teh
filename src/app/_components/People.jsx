@@ -53,7 +53,7 @@ const images = [
 
 export const People = () => {
   return (
-    <div className="relative w-full -bottom-90 sm:-bottom:150 lg:-bottom-90 7xl:-bottom-140">
+    <div className="relative w-full mt-90">
       <Container>
         <div className="rounded-3xl sm:rounded-4xl h-auto w-full bg-white shadow-lg">
           <div className="h-auto w-full relative">
@@ -78,12 +78,24 @@ export const People = () => {
             </div>
 
             {/* People Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between gap-[clamp(0.75rem,2vw,2rem)] h-auto lg:h-60 px-4 sm:px-6 lg:px-8">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between gap-[clamp(0.75rem,2vw,2rem)] h-auto lg:h-60 px-4 sm:px-6 lg:px-8"> */}
+            <div
+              className="
+    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+    gap-[clamp(0.75rem,2vw,2rem)]
+    px-4 sm:px-6 lg:px-8
+  "
+            >
               {images.map((img) => {
                 return (
                   <div
                     key={img.title}
-                    className="group cursor-pointer flex-1 w-full h-40 sm:h-72 lg:h-full rounded-2xl shadow-people relative overflow-hidden flex items-end"
+                    // className="group cursor-pointer flex-1 w-full h-40 sm:h-72 lg:h-full rounded-2xl shadow-people relative overflow-hidden flex items-end"
+                    className="
+    group cursor-pointer w-full
+    aspect-[4/3]
+    rounded-2xl shadow-people relative overflow-hidden flex items-end
+  "
                   >
                     <Image
                       className="absolute object-cover group-hover:scale-105 transition duration-300"
