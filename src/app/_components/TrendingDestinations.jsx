@@ -130,8 +130,8 @@ const DestinationCarousel = ({ items, activeIndex, onSelect, next, prev }) => {
               <div
                 className={`relative overflow-hidden rounded-3xl ${
                   offset === 0
-                    ? "h-[200px] w-[250px] lg:h-[420px] lg:w-[300px]"
-                    : "h-[200px] w-[250px] lg:h-[360px] lg:w-[240px]"
+                    ? "h-[200px] w-[250px] md:h-[300px] md:w-[390px] lg:h-[420px] lg:w-[300px]"
+                    : "h-[200px] w-[250px] lg:h-[240px] lg:w-[390px] lg:h-[360px] lg:w-[240px]"
                 }`}
               >
                 <Image
@@ -180,10 +180,10 @@ export const TrendingDestinations = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="md:h-screen h-auto max-h-[700px] my-[clamp(1.6rem,5vw,4rem)]">
+    <section className="md:h-screen h-auto max-h-175 my-[clamp(1.6rem,5vw,4rem)]">
       <Container className="h-full">
         <div className="h-full flex flex-col gap-[clamp(0.25rem,2vw,2rem)]">
-          <div className="flex gap-[clamp(0.25rem,2vw,1.25rem)] flex-col w-full">
+          <div className="flex gap-[clamp(0.25rem,2vw,1.25rem)] flex-col w-full mb-8">
             <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize">
               Top 10 <span className="text-blue-400">destinations</span>
             </h2>

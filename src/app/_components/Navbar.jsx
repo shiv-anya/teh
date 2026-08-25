@@ -8,12 +8,12 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative z-50 py-4 sm:py-5 md:py-6 w-full bg-linear-to-b from-black/70 via-black/30 to-transparent text-white">
+    <nav className="relative z-50 py-[clamp(1rem,1.25rem,2rem)] w-full bg-linear-to-b from-black/70 via-black/30 to-transparent text-white">
       <Container>
         <div className="w-full flex justify-between items-center">
           {/* Logo */}
           <div className="shrink-0">
-            <h1 className="text-[clamp(1.6rem,2vw,1.4rem)] font-bold whitespace-nowrap">
+            <h1 className="text-[clamp(1rem,5vw,1.2rem)] whitespace-nowrap">
               Travel Empire Holidays
             </h1>
           </div>
@@ -33,7 +33,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2.5 rounded-full bg-black/30 backdrop-blur-sm cursor-pointer"
+            className="lg:hidden p-[clamp(0.25rem,0.5rem,0.62rem)] rounded-full bg-black/30 backdrop-blur-sm cursor-pointer"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
