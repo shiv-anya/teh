@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export function Typewriter({ words }) {
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
-  const [showInput, setShowInput] = useState(false);
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     let timeout;
@@ -27,15 +27,18 @@ export function Typewriter({ words }) {
   }, [text, wordIndex, words]);
 
   return (
-    <span
-      className="pointer-events-none absolute left-16 top-1/2 -translate-y-1/2 text-slate-400"
-      onClick={() => showInput(true)}
-    >
-      Search your next destination,{" "}
-      <span className="font-medium">
-        {text}
-        <span className="animate-pulse">|</span>
+    <div className="flex items-center">
+      <span className="mr-1 pointer-events-none whitespace-nowrap">
+        Search your next destination,{" "}
       </span>
-    </span>
+
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder={text}
+        className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-gray-400"
+      />
+    </div>
   );
 }

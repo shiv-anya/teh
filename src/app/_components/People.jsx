@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Typewriter } from "./UI/Typewriter";
+import { Heading } from "./UI/Heading";
 
 const features = [
   {
@@ -53,12 +54,11 @@ const images = [
 
 export const People = () => {
   return (
-    <div className="relative w-full mt-90">
+    <div className="relative w-full mb-[clamp(1.6rem,5vw,4rem)]">
       <Container>
-        <div className="rounded-3xl sm:rounded-4xl h-auto w-full bg-white shadow-lg">
+        <div className="rounded-3xl sm:rounded-4xl h-auto w-full">
           <div className="h-auto w-full relative">
-            {/* Search */}
-            <div className="shadow-lg rounded-full w-[90%] md:w-[80%] lg:w-1/2 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 text-slate-500 flex items-center">
+            {/* <div className="shadow-lg rounded-full w-[90%] md:w-[80%] lg:w-1/2 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 text-slate-500 flex items-center">
               <button className="p-3 sm:p-4 rounded-full shrink-0">
                 <Search size={20} className="sm:w-[22px] sm:h-[22px]" />
               </button>
@@ -70,12 +70,26 @@ export const People = () => {
               <button className="bg-black p-3 sm:p-4 rounded-full text-white cursor-pointer shrink-0">
                 <ArrowRight size={20} className="sm:w-[22px] sm:h-[22px]" />
               </button>
-            </div>
+            </div> */}
 
             {/* Heading */}
-            <div className="py-8 sm:py-10 pt-12 sm:pt-14 px-4 text-2xl sm:text-3xl font-thin font-jakarta text-center">
+            {/* <div className="py-8 sm:py-10 pt-12 sm:pt-14 px-4 text-2xl sm:text-3xl font-thin font-jakarta text-center">
               Choose your people
-            </div>
+            </div> */}
+            {/* <div className="flex gap-[clamp(0.5rem,2vw,0.75rem)] flex-col mb-8 sm:mb-10">
+              <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-jakarta capitalize">
+                Explore by <span className="text-blue-400">People</span>
+              </h2>
+
+              <p className="text-base sm:text-lg lg:text-xl">
+                Choose plan according to your company
+              </p>
+            </div> */}
+            <Heading
+              heading={"Explore by"}
+              highlight={"people"}
+              subheading={"Choose plan according to your company"}
+            />
 
             {/* People Cards */}
             {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:justify-between gap-[clamp(0.75rem,2vw,2rem)] h-auto lg:h-60 px-4 sm:px-6 lg:px-8"> */}
@@ -83,7 +97,7 @@ export const People = () => {
               className="
     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
     gap-[clamp(0.75rem,2vw,2rem)]
-    px-4 sm:px-6 lg:px-8
+    
   "
             >
               {images.map((img) => {
@@ -114,7 +128,7 @@ export const People = () => {
           </div>
 
           {/* Features */}
-          <div className="p-4 sm:p-6 rounded-b-3xl sm:rounded-b-4xl grid grid-cols-1 sm:grid-cols-2 lg:flex gap-[clamp(0.75rem,2vw,2rem)] justify-around items-center">
+          {/* <div className="py-4 sm:py-6 rounded-b-3xl sm:rounded-b-4xl grid grid-cols-1 sm:grid-cols-2 lg:flex gap-[clamp(0.75rem,2vw,2rem)] justify-around items-center">
             {features.map((f, i) => (
               <div
                 key={i}
@@ -124,7 +138,7 @@ export const People = () => {
                 <p>{f.title}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </Container>
     </div>

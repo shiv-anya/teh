@@ -1,48 +1,158 @@
-import { ArrowRight, MapPin, Quote, Star } from "lucide-react";
+"use client";
+
+import { ArrowRight, Heart, MapPin, Quote, Star } from "lucide-react";
 import Image from "next/image";
+import Carousel from "./UI/Carousel";
+import { motion } from "motion/react";
 
 const reviews = [
   {
-    name: "Shino Ulahannan",
-    rating: 5,
-    destination: "Thailand",
     review:
-      "Our recent family trip to Thailand was an absolutely delightful experience, thanks to the exceptional service provided by Travel Empire Holidays & Trvldeals --- Appreciate Abhinav, Aman, Immanuel & team for the wonderful job. Right from the initial planning to the completion of the journey, everything was handled with great professionalism and attention to detail. All travel arrangements—flights, hotel stays, airport transfers, and sightseeing—were perfectly organized. The team provided timely updates, the pickups and local coordination were punctual, and the accommodations were comfortable and well-chosen for our needs. We never had to worry about logistics, allowing us to fully enjoy quality time together as a family. Truly commendable service — organized, responsive, and customer-focused. Highly recommended for anyone looking for a well-planned, cost-effective, worry-free travel experience!",
-    image: null,
+      "The entire trip was so well planned. From the hotel to the sightseeing, everything was smooth and hassle-free. Goa was absolutely beautiful!",
+    name: "Riya Sharma",
+    destination: {
+      city: "Goa",
+      country: "India",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&h=1600&q=85",
   },
   {
-    name: "Nidhi Shrivastava",
-    rating: 5,
-    destination: "Andaman",
     review:
-      "I had a trip of Andmaan with Travel Empire,it was a very well structured and well organised one,there was good coordination and understanding between distant coordinators at various other places to visit,they were available on just s phone call and were ready to modify and plan accordingly,to our needs.They managed the things very well.All very thanks and good wishes to the team Travel Empire.... Looking forward to many more trips with them.",
-    image: "/images/nidhi.webp",
+      "I had an amazing experience exploring Jaipur. The itinerary was perfectly balanced and the team made sure everything went according to plan.",
+    name: "Arjun Mehta",
+    destination: {
+      city: "Jaipur",
+      country: "India",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
+
+  {
+    review:
+      "The trip to Manali was exactly what we needed. Beautiful views, comfortable stays and a very well-organized itinerary.",
+    name: "Rahul Verma",
+    destination: {
+      city: "Manali",
+      country: "India",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&h=1600&q=85",
   },
   {
-    name: "Subhash Kg",
-    rating: 5,
-    destination: null,
     review:
-      "The journey was extremely convenient and relaxing. The transportation and residence were very sophisticated and comforting. The guide was very friendly and knowledgeable.Overall we had an amazing holiday",
-    image: null,
+      "Everything about our Kerala trip was wonderful. The houseboat experience was the highlight, and the whole journey was completely stress-free.",
+    name: "Ananya Singh",
+    destination: {
+      city: "Alappuzha",
+      country: "India",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=900&h=1600&q=85",
   },
   {
-    name: "Yogesh Daudkhane",
-    rating: 5,
-    destination: null,
     review:
-      "It was a wonderful tour organized by Travel empire. Special thanks to Abhinav & Emanuel for their support during the tour. Keep it up.",
-    image: "/images/yogesh.webp",
+      "A perfect short getaway! Everything was arranged on time and the recommendations for places to visit and eat were excellent.",
+    name: "Pooja Bansal",
+    destination: {
+      city: "Pondicherry",
+      country: "India",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
+
+  // International
+  {
+    review:
+      "Dubai was an incredible experience. From airport transfers to the desert safari, everything was organized beautifully. We didn't have to worry about a thing.",
+    name: "Aman Gupta",
+    destination: {
+      city: "Dubai",
+      country: "UAE",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&h=1600&q=85",
   },
   {
-    name: "Srikant Pote",
-    rating: 5,
-    destination: null,
     review:
-      "Thank you so much for the exceptional support and seamless service throughout our journey. Every detail was thoughtfully managed, making our overall experience truly memorable and hassle-free. We genuinely appreciate your efforts and look forward to traveling with you again.",
-    image: null,
+      "Bangkok was such a fun trip! The itinerary covered all the places we wanted to see while still giving us plenty of free time to explore.",
+    name: "Simran Kaur",
+    destination: {
+      city: "Bangkok",
+      country: "Thailand",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&h=1600&q=85",
   },
-  {},
+  {
+    review:
+      "Singapore was perfect for our family vacation. The hotel was great, transfers were seamless and every detail was taken care of.",
+    name: "Vivek Agarwal",
+    destination: {
+      city: "Singapore",
+      country: "Singapore",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
+  {
+    review:
+      "Bali was absolutely magical! The combination of beaches, temples and beautiful resorts made this one of our best vacations yet.",
+    name: "Megha Joshi",
+    destination: {
+      city: "Bali",
+      country: "Indonesia",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
+  {
+    review:
+      "Our Paris trip was beautifully planned. We got to see all the major attractions without feeling rushed, and the hotel location was excellent.",
+    name: "Rohan Khanna",
+    destination: {
+      city: "Paris",
+      country: "France",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
+  {
+    review:
+      "The Tokyo trip exceeded our expectations. Everything from the accommodation to the transfers was handled professionally. An amazing experience!",
+    name: "Ishita Rao",
+    destination: {
+      city: "Tokyo",
+      country: "Japan",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
+  {
+    review:
+      "Switzerland looked like a dream and the trip was planned perfectly. The scenic train rides and mountain views were unforgettable.",
+    name: "Aditya Sethi",
+    destination: {
+      city: "Zurich",
+      country: "Switzerland",
+    },
+    rating: 5,
+    image:
+      "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=900&h=1600&q=85",
+  },
 ];
 
 const reviewLayouts = [
@@ -182,10 +292,184 @@ const ReviewCard = ({ review, layout, index }) => {
   );
 };
 
+function TestimonialCard({ testimonial, index }) {
+  return (
+    <motion.article
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      className="group relative h-full w-full overflow-hidden bg-slate-200 shadow-people"
+    >
+      {/* Image */}
+      <motion.img
+        src={testimonial.image}
+        alt={`${testimonial.destination.city}, ${testimonial.destination.country}`}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+        variants={{
+          rest: {
+            scale: 1,
+          },
+          hover: {
+            scale: 1.04,
+          },
+        }}
+        transition={{
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      />
+
+      {/* Dark overlay */}
+      <motion.div
+        className="absolute inset-0 bg-black/0"
+        variants={{
+          rest: {
+            backgroundColor: "rgba(0,0,0,0)",
+          },
+          hover: {
+            backgroundColor: "rgba(0,0,0,0.42)",
+          },
+        }}
+        transition={{ duration: 0.4 }}
+      />
+
+      {/* Top icons */}
+      <div className="absolute left-7 right-7 top-7 flex items-center justify-between">
+        <motion.div
+          className="flex size-16 items-center justify-center rounded-2xl border border-white/30 bg-white/10 text-white backdrop-blur-md"
+          variants={{
+            rest: {
+              opacity: 0,
+              y: -10,
+            },
+            hover: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{ duration: 0.35 }}
+        >
+          <Quote className="size-7 fill-white" />
+        </motion.div>
+
+        <motion.button
+          type="button"
+          aria-label="Save testimonial"
+          className="flex size-16 items-center justify-center rounded-2xl border border-white/30 bg-white/10 text-white backdrop-blur-md"
+          variants={{
+            rest: {
+              opacity: 0,
+              y: -10,
+            },
+            hover: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{ duration: 0.35, delay: 0.05 }}
+        >
+          <Heart className="size-7" />
+        </motion.button>
+      </div>
+
+      {/* Bottom collapsed info */}
+      <motion.div
+        className="absolute bottom-7 left-7 right-7 overflow-hidden rounded-2xl border border-white/30 bg-white/20 p-6 text-white backdrop-blur-xl"
+        variants={{
+          rest: {
+            height: 110,
+          },
+          hover: {
+            height: 320,
+          },
+        }}
+        transition={{
+          duration: 0.55,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        {/* Drag / handle */}
+        <motion.div
+          className="mx-auto rounded-full bg-white"
+          variants={{
+            rest: {
+              opacity: 0,
+            },
+            hover: {
+              opacity: 0.8,
+            },
+          }}
+        />
+
+        {/* User info */}
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex min-w-0 items-center gap-4">
+            <div className="min-w-0">
+              <h3 className="truncate text-xl font-semibold">
+                {testimonial.name}
+              </h3>
+
+              <div className="mt-1 flex items-center gap-1.5 text-sm text-white/90">
+                <MapPin className="size-4" />
+                <span>
+                  {testimonial.destination.city},{" "}
+                  {testimonial.destination.country}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Rating */}
+          <div className="flex shrink-0 items-center gap-2">
+            <Star className="size-6 fill-yellow-400 text-yellow-400" />
+            <span className="text-lg font-medium">
+              {testimonial.rating.toFixed(1)}
+            </span>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <motion.div
+          className="my-5 h-px bg-white/30"
+          variants={{
+            rest: {
+              opacity: 0,
+            },
+            hover: {
+              opacity: 1,
+            },
+          }}
+        />
+
+        {/* Review */}
+        <motion.p
+          className="text-lg leading-8 text-white/95"
+          variants={{
+            rest: {
+              opacity: 0,
+              y: 20,
+            },
+            hover: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{
+            duration: 0.4,
+            delay: 0.12,
+          }}
+        >
+          {testimonial.review}
+        </motion.p>
+      </motion.div>
+    </motion.article>
+  );
+}
+
 export const TextTestimonials = () => {
   return (
     <>
-      <div
+      {/* <div
         className="relative grid grid-cols-1 lg:grid-cols-3 gap-[clamp(0.25rem,2vw,1.25rem)] mt-14 rounded-2xl p-6 overflow-hidden"
         style={{
           backgroundImage:
@@ -208,7 +492,18 @@ export const TextTestimonials = () => {
             <ReviewCard layout={reviewLayouts[i]} review={r} index={i} />
           </div>
         ))}
-      </div>
+      </div> */}
+
+      <Carousel visibleSlides={4}>
+        {reviews.map((testimonial, index) => (
+          <div
+            key={index}
+            className="shrink-0 rounded-2xl overflow-hidden shadow-sm w-[50%] lg:w-[33.333%] xl:w-[25%] relative h-[70vh] flex items-end cursor-pointer group"
+          >
+            <TestimonialCard testimonial={testimonial} index={index} />
+          </div>
+        ))}
+      </Carousel>
     </>
   );
 };

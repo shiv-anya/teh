@@ -61,7 +61,7 @@ export const Enquiry = () => {
           </div>
         </div>
         <div className="w-full lg:w-[45%] h-full relative flex justify-center items-center px-8 pb-8 lg:p-8 text-white">
-          <div className="bg-black/50 shadow-glass backdrop-blur-sm h-fit w-full rounded-2xl p-8">
+          <div className="bg-black/50 backdrop-blur-sm h-fit w-full rounded-2xl p-8">
             <h2 className="text-[clamp(1.6rem,2vw,1.4rem)] border-b border-gray-500 text-center pb-4">
               Allow us to call you back
             </h2>

@@ -52,7 +52,11 @@ const ListedLinks = ({ list, title }) => {
       <h2 className="text-white font-bold text-lg">{title}</h2>
       <ul className="text-sm text-gray-400 flex flex-col gap-4 mt-8">
         {list.map((l, i) => (
-          <Link href={l.link} key={i}>
+          <Link
+            href={l.link}
+            key={i}
+            className="hover:text-gray-100 transition duration-300"
+          >
             {l.title}
           </Link>
         ))}
@@ -143,7 +147,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex justify-between text-xs text-gray-300 items-center relative pt-8">
-            <p>© 2026 Trvltkts Travel. All rights reserved.</p>
+            <p>&copy; 2026 Trvltkts Travel. All rights reserved.</p>
 
             <div className="flex gap-5">
               <Link href="/cookies-policy">Cookies and Privacy Policy</Link>

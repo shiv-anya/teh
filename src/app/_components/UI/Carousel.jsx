@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export default function Carousel({ children, visibleSlides = 4, gap }) {
+export default function Carousel({ children, visibleSlides = 4 }) {
   const trackRef = useRef(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,7 +23,7 @@ export default function Carousel({ children, visibleSlides = 4, gap }) {
 
       if (!firstChild) return;
 
-      setSlideWidth(firstChild.offsetWidth + gap);
+      setSlideWidth(firstChild.offsetWidth);
     };
 
     calculateWidth();
@@ -33,7 +33,7 @@ export default function Carousel({ children, visibleSlides = 4, gap }) {
     return () => {
       window.removeEventListener("resize", calculateWidth);
     };
-  }, [gap]);
+  }, []);
 
   const next = () => {
     setActiveIndex((prev) => Math.min(prev + 1, totalSlides - visibleSlides));
@@ -82,10 +82,10 @@ export default function Carousel({ children, visibleSlides = 4, gap }) {
       </div>
 
       <div
-        className="w-full max-h-[300px] h-40 md:h-[25vh] xl:h-[50vh]"
-        style={{
-          overflow: "hidden",
-        }}
+        className="w-full h-auto overflow-hidden"
+        // style={{
+        //   overflow: "hidden",
+        // }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}

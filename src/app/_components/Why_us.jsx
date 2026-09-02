@@ -87,7 +87,7 @@ export const WhyUs = () => {
               </div>
             </div>
           </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[clamp(0.5rem,2vw,1rem)] mt-8">
+          {/* <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[clamp(0.5rem,2vw,1rem)] mt-8">
             {statistics.map((stat, i) => (
               <div
                 key={i}
@@ -102,7 +102,7 @@ export const WhyUs = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </Container>
     </section>

@@ -1,5 +1,4 @@
 // #F5F3EA
-import { ArrowRight, Search } from "lucide-react";
 import { Navbar } from "./_components/Navbar";
 import { People } from "./_components/People";
 import { Themes } from "./_components/Themes";
@@ -10,6 +9,7 @@ import { Destinations } from "./_components/Destinations";
 import { Reviews } from "./_components/Reviews";
 import { Enquiry } from "./_components/Enquiry";
 import { Footer } from "./_components/Footer";
+import { HeroContext } from "./_components/HeroContent";
 
 export const domesticDestinations = [
   {
@@ -158,6 +158,7 @@ export const internationalDestinations = [
 export default function Home() {
   return (
     <>
+      {/* <div className="relative mb-[clamp(1.6rem,5vw,4rem)]"> */}
       <div className="relative mb-[clamp(1.6rem,5vw,4rem)]">
         <div className="relative h-svh min-h-150 max-h-250">
           <video
@@ -167,17 +168,18 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/videos/hero_video.mp4" type="video/mp4" />
+            <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
 
-          <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/30 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/50 from-1% to-transparent to-80%" />
 
           <header className="relative z-20 w-full">
             <Navbar />
           </header>
 
           <Container className="absolute inset-0">
-            <div className="h-full w-full flex flex-col gap-[clamp(0.25rem,2vw,0.5rem)] text-white justify-center items-center text-center px-[clamp(0.75rem,3vw,2rem)] -translate-y-4 sm:-translate-y-6">
+            <HeroContext />
+            {/* <div className="h-full w-full flex flex-col gap-[clamp(0.25rem,2vw,0.5rem)] text-white justify-center items-center text-center px-[clamp(0.75rem,3vw,2rem)] -translate-y-4 sm:-translate-y-6">
               <h2 className="text-[clamp(1.8rem,5vw,2.5rem)] font-thin font-jakarta leading-[1.1] max-w-5xl">
                 WHERE WILL YOU GO NEXT?
               </h2>
@@ -187,17 +189,15 @@ export default function Home() {
                 <br className="hidden sm:block" />
                 and journeys that stay with you forever.
               </p>
-            </div>
+            </div> */}
           </Container>
         </div>
-        <div className="-mt-[600px]">
-          <People />
-        </div>
+        {/* <div className="-mt-[600px]"></div> */}
       </div>
       <div>
+        <People />
         <Themes />
         <TrendingDestinations />
-        <WhyUs />
         <div className="w-full">
           <Container>
             <h2 className="font-jakarta text-[clamp(1.8rem,5vw,2.5rem)] capitalize">
@@ -214,6 +214,7 @@ export default function Home() {
             <Destinations cards={domesticDestinations} />
           </Container>
         </div>
+        <WhyUs />
         <Reviews />
         <Enquiry />
         <Footer />
